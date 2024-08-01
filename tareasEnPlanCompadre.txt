@@ -1,0 +1,8 @@
+
+
+"""Crear etiquetas por agente
+Borrar filas
+Suma valores de columna
+Suma valores de fila
+crear un nuevo archivo con los cambios
+Contar el número de veces que un string se repite"""
