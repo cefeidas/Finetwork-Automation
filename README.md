@@ -110,6 +110,8 @@ Before you begin, ensure you have the following software and tools installed:
 - Jupyter Notebooks
 - Pandas library
 - Rainbow CSV extension
+- openpyxl
+- load_workbook
 
 ### Installation
 
