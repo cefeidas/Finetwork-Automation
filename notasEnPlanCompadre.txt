@@ -8,3 +8,11 @@ Suma valores de columna
 Suma valores de fila
 crear un nuevo archivo con los cambios
 Contar el número de veces que un string se repite"""
+
+Cambiar apariencia:
+
+Rueda (abajo izquierda)
+   Temas
+   Tema de color
+
+Elije dark, no ocurre nada. Pulsa Ctrl + Shift + R para refrescar el navegador y limpiar el caché.
