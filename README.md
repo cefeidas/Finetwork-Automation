@@ -125,7 +125,101 @@ Follow these steps to set up the project environment:
    cd yourproject
 3. Install the required libraries:
    ```sh
-   pip install -r requirements.txt   
+   pip install -r requirements.txt
+
+### Data Preparation Guide
+
+Before starting, you will need to access and prepare the initial files. After running the Jupyter notebooks, there will be additional post-processing steps required to make the final file ready for agents to review.
+
+#### Initial Files
+
+The files you will need to start with are:
+
+- `Metabase.xls`
+- `Informe de métricas históricas.csv`
+
+The final file to be generated is:
+
+- `OBJETIVO_CALL_INB_AGOSTO_24`
+
+#### Accessing Initial Files
+
+**Metabase**
+
+*Explain the process here once the information is available.*
+
+**Informe de métricas históricas.csv**
+
+1. Follow the link: [Link]
+2. Use your Amazon credentials to log in.
+3. You should be redirected to this page:
+   
+   ![Screenshot](path/to/your/image)
+
+4. Ensure you are selecting the correct date range:
+   - Click on the settings wheel.
+   - Select "Intervalo y rango de tiempo".
+   - Make sure "A diario" and "Mes hasta la fecha" are selected.
+
+   ![Screenshot](path/to/your/image)
+
+5. Apply the necessary filters:
+   - Click on the settings wheel.
+   - Select "Métricas".
+   - Ensure only "Contactos administrados entrantes" and "Contactos transferidos fuera" are selected.
+
+6. Once everything is set, click on "Acciones" and then "Descargar CSV".
+7. Ensure the file is named `Informe de métricas históricas` before adding it to the GitHub project.
+
+#### Preparing the Metabase.xls File
+
+1. After downloading the file, filter the Metabase data. We are only interested in certain data, so we will create separate sheets for each filter:
+
+   - **Active**: Apply this filter. ![Little Image](path/to/your/image)
+   - **Canceled**: Apply this filter. ![Little Image](path/to/your/image)
+   - Continue with additional filters as needed.
+
+2. For each sheet, ensure there is data available for every date. If any dates are missing, create a column with the missing dates. Pay special attention to the "PTE de firma" sheet, where this happens more frequently.
+
+   ![Screenshot](path/to/your/image)
+
+3. It does not matter whether the sheet contains values or if it is a pivot table. If you encounter issues adding columns in a pivot table, simply copy and paste the data as values.
+
+4. Add a final sheet to the end of the Metabase file named `AGENTES`. This sheet will contain a list of agents that the program will read.
+
+   - Obtain this list from the `AGENTES_METABASE` file located in the shared folder:
+     ![Screenshot](path/to/your/image)
+
+After completing these steps, the file will be ready to use in the Jupyter notebooks.
+
+#### Running the Notebooks
+
+1. Run all cells in the following notebooks in the specified order:
+   - `inbound_global.ipynb`
+   - `inbound_diario.ipynb`
+   - `pivot_table.ipynb`
+
+2. Download the transformed file named `OBJETIVO_CALL_INB_AGOSTO_24`.
+
+3. Share this file with the Reporting team and make a copy for the agents.
+
+#### Final Adjustments Before Sharing with Agents
+
+Before presenting the data to the agents, perform the following steps:
+
+1. **Sort Agents:**
+   - Sort agents in `RankingA`, with the best performers at the top.
+   - Sort agents in `RankingB`, with the best performers at the top.
+   - Sort agents in `RankingC`, with the best performers at the top.
+
+2. **Manual Adjustments:**
+   - Manually add any missing service data for agents who didn't use their own credentials.
+
+3. **Final Touches:**
+   - Hide the following sheets: *Blablabla*.
+   - Protect all sheets to prevent any changes without a password.
+
+
 ### Running the Project
 
 To start the Jupyter Notebook and run the scripts, follow these instructions:
